@@ -1,0 +1,105 @@
+{
+  "version": "tree-0.1",
+  "tree": {
+    "id": "App",
+    "path": "",
+    "children": {
+      "Tree": {
+        "id": "Tree",
+        "path": "Tree",
+        "constructInfo": {
+          "fqn": "constructs.Construct",
+          "version": "10.0.13"
+        }
+      },
+      "CdkSimpleAppStack": {
+        "id": "CdkSimpleAppStack",
+        "path": "CdkSimpleAppStack",
+        "children": {
+          "MySimpleAppBucketFromCDK": {
+            "id": "MySimpleAppBucketFromCDK",
+            "path": "CdkSimpleAppStack/MySimpleAppBucketFromCDK",
+            "children": {
+              "Notifications": {
+                "id": "Notifications",
+                "path": "CdkSimpleAppStack/MySimpleAppBucketFromCDK/Notifications",
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.0.13"
+                }
+              },
+              "Resource": {
+                "id": "Resource",
+                "path": "CdkSimpleAppStack/MySimpleAppBucketFromCDK/Resource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                  "aws:cdk:cloudformation:props": {
+                    "bucketEncryption": {
+                      "serverSideEncryptionConfiguration": [
+                        {
+                          "serverSideEncryptionByDefault": {
+                            "sseAlgorithm": "AES256"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                  "version": "2.2.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.aws_s3.Bucket",
+              "version": "2.2.0"
+            }
+          },
+          "MySimpleAppBucketNameExport": {
+            "id": "MySimpleAppBucketNameExport",
+            "path": "CdkSimpleAppStack/MySimpleAppBucketNameExport",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.2.0"
+            }
+          },
+          "CDKMetadata": {
+            "id": "CDKMetadata",
+            "path": "CdkSimpleAppStack/CDKMetadata",
+            "children": {
+              "Default": {
+                "id": "Default",
+                "path": "CdkSimpleAppStack/CDKMetadata/Default",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnResource",
+                  "version": "2.2.0"
+                }
+              },
+              "Condition": {
+                "id": "Condition",
+                "path": "CdkSimpleAppStack/CDKMetadata/Condition",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnCondition",
+                  "version": "2.2.0"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.0.13"
+            }
+          }
+        },
+        "constructInfo": {
+          "fqn": "aws-cdk-lib.Stack",
+          "version": "2.2.0"
+        }
+      }
+    },
+    "constructInfo": {
+      "fqn": "aws-cdk-lib.App",
+      "version": "2.2.0"
+    }
+  }
+}
